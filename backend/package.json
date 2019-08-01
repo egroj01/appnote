@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.1",
+  "description": "proyecto creado para entrenamiento.",
+  "main": "index.js",
+  "author": "Jorge Castillo",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
