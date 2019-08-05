@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import { format } from 'timeago.js';
 import { Link } from 'react-router-dom';
+import { Button, Tooltip, Icon } from 'antd';
 
 export default class NotesList extends Component {
   state = {
@@ -26,6 +27,8 @@ export default class NotesList extends Component {
   }
 
   render() {
+    const editarNota = <span> Editar Nota </span>;
+    const borrarNota = <span> Borrar Nota </span>;
     return (
       <div className="row">
         {
@@ -34,11 +37,11 @@ export default class NotesList extends Component {
               <div className="card">
                 <div className="card-header d-flex align-items-center justify-content-between">
                   <h5 className="d-flex align-items-center">{note.title}</h5>
-                  <Link to={`/edit/${note._id}`} class="btn btn-outline-warning" data-placement="right" title="Editar Nota">
-                    <i className="material-icons">
-                      edit
-                    </i>
-                  </Link>
+                  <Tooltip placement="left" title={editarNota}>
+                    <Link to={`/edit/${note._id}`}>
+                      <Icon type="edit" theme="twoTone"/>
+                    </Link>
+                  </Tooltip>                  
                 </div>
                 <div className="card-body">
                   <p>Contenido: {note.content}</p>
@@ -46,11 +49,11 @@ export default class NotesList extends Component {
                   <p>Fecha: {format(note.date)}</p>
                 </div>
                 <div className="card-footer">
-                  <button class="btn btn-outline-danger" onClick={() => this.deleteNote(note._id)} data-placement="right" title="Borrar Nota">
-                    <i className="material-icons">
-                    delete
-                  </i>
-                  </button>
+                  <Tooltip placement="right" title={borrarNota}>  
+                    <Button type="danger" onClick={() => this.deleteNote(note._id)}>
+                      <Icon type="delete"/>
+                    </Button>
+                  </Tooltip>
                 </div>
               </div>
             </div>

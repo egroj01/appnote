@@ -8,8 +8,9 @@ export default class Navigation extends Component {
         <div className="container">
           <Link className="navbar-brand" to="/">
             <i className="material-icons"> assignment </i>
-              CREADOR DE NOTAS
+              <span> NOTAS APP </span>
           </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -21,6 +22,7 @@ export default class Navigation extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
+
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">

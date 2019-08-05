@@ -74,10 +74,8 @@ export default class CreateNote extends Component {
     return (
       <div className="col-md-6 offset-md-3">
         <div className="card card-body">
-          <h4>Crear una nota</h4>
-            <form onSubmit={this.onSubmit}>
-
-            {/** SELECT USER  **/}
+          <h4>Nota</h4>
+            <form onSubmit={this.onSubmit}>           
               <div className="form-group">
                 <select
                   className="form-control"
@@ -94,12 +92,11 @@ export default class CreateNote extends Component {
                 </select>
               </div>
 
-              {/* Note Title */}
               <div className="form-group">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Title"
+                  placeholder="Titulo"
                   name="title"
                   onChange={this.onInputChange}
                   value={this.state.title}
@@ -107,12 +104,11 @@ export default class CreateNote extends Component {
                 />
               </div>
 
-              {/* Note Content */}
               <div className="form-group">
                 <textarea
                   type="text"
                   className="form-control"
-                  placeholder="Content"
+                  placeholder="Contenido"
                   name="content"
                   onChange={this.onInputChange}
                   value={this.state.content}
@@ -120,7 +116,6 @@ export default class CreateNote extends Component {
                 />
               </div>
 
-              {/* Note Date */}
               <div className="form-group">
                 <Datepicker
                   className="form-control"
@@ -129,9 +124,9 @@ export default class CreateNote extends Component {
                 />
               </div>
 
-              <button type="submit" class="btn btn-outline-success" data-placement="right" title="Guardar Nota">
+              <button type="submit" className="btn btn-outline-success" data-placement="right" title="Guardar Nota">
                 <i className="material-icons">
-                  assignment
+                  assignment_turned_in
                 </i>
               </button>
 

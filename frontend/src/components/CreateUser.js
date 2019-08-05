@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios'
+import Axios from 'axios';
 
 export default class CreateUser extends Component {
 
@@ -36,7 +36,6 @@ export default class CreateUser extends Component {
   }
 
   deleteUser = async (userId) => {
-    // console.log(userId)
     await Axios.delete(`http://localhost:4000/api/users/${userId}`)
     this.getUsers();
   }
@@ -45,7 +44,7 @@ export default class CreateUser extends Component {
     return (
       <div className="row">
         <div className="col-md-4">
-          <h3> Crear Nuevo Usuario </h3>
+          <h3> Nuevo Usuario </h3>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <input
@@ -55,7 +54,7 @@ export default class CreateUser extends Component {
                 value={this.state.username}
               />
             </div>
-            <button type="submit" class="btn btn-outline-primary" data-placement="right" title="Guardar Usuario">
+            <button type="submit" className="btn btn-outline-primary" data-placement="right" title="Guardar Usuario">
               <i className="material-icons">
               assignment_ind
               </i>
